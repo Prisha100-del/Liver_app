@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liver Cirrhosis Prediction</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        document.addEventListener("contextmenu", function (e) {
+            e.preventDefault();
+        });
+
+        document.onkeydown = function(e) {
+            if (e.key === "F12" || 
+                (e.ctrlKey && e.shiftKey && e.key === "I") || 
+                (e.ctrlKey && e.key === "U") || 
+                (e.ctrlKey && e.key === "S")) {
+                return false;
+            }
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Liver Cirrhosis Prediction</h1>
+            <nav>
+                <a href="index.html" class="active">Home</a>
+                <a href="test.html">Take Test</a>
+                <a href="about.html">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Understanding Liver Cirrhosis</h2>
+                <p>Liver cirrhosis is a late-stage liver disease in which healthy liver tissue is replaced with scar tissue, preventing the liver from functioning properly.</p>
+                <a href="test.html" class="cta-button">Take Prediction Test</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Healthy Liver">
+            </div>
+        </section>
+
+        <section class="info-section">
+            <h2>Key Information About Liver Cirrhosis</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="card-icon">🫀</div>
+                    <h3>What is Liver Cirrhosis?</h3>
+                    <p>Cirrhosis is a condition where the liver is scarred and permanently damaged. Scar tissue replaces healthy liver tissue and prevents your liver from working normally.</p>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">⚠️</div>
+                    <h3>Common Causes</h3>
+                    <p>Common causes include chronic alcohol abuse, hepatitis B and C, fatty liver disease, and other conditions that damage the liver over time.</p>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🤒</div>
+                    <h3>Symptoms</h3>
+                    <p>Symptoms may include fatigue, weakness, loss of appetite, easy bruising, yellowing of skin (jaundice), itchy skin, and swelling in legs.</p>
+                </div>
+                <div class="info-card">
+                    <div class="card-icon">🛡️</div>
+                    <h3>Prevention</h3>
+                    <p>Prevent cirrhosis by limiting alcohol intake, maintaining a healthy weight, protecting against hepatitis, and avoiding unnecessary medications.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="comparison-section">
+            <!-- <h2>Healthy vs. Cirrhotic Liver</h2> -->
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h2>Healthy Liver</h2>
+                    <img src="/static/images/healthy_liver.jpg" alt="Healthy Liver">
+                    <h3>Healthy Liver</h3>
+                    <p>Smooth texture, normal size, and proper function</p>
+                </div>
+                <div class="comparison-card">
+                    <h2>Cirrhotic Liver</h2>
+                    <img src="/static/images/cirrhotic_liver.jpg" alt="Cirrhotic Liver">
+                    <h3>Cirrhotic Liver</h3>
+                    <p>Scarred, shrunken, and impaired function</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Liver Cirrhosis Prediction Tool. This tool is for educational purposes only. Always consult with healthcare professionals for medical advice.</p>
+    </footer>
+</body>
+</html> 

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liver Cirrhosis Test</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        document.addEventListener("contextmenu", function (e) {
+            e.preventDefault();
+        });
+
+        document.onkeydown = function(e) {
+            if (e.key === "F12" || 
+                (e.ctrlKey && e.shiftKey && e.key === "I") || 
+                (e.ctrlKey && e.key === "U") || 
+                (e.ctrlKey && e.key === "S")) {
+                return false;
+            }
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Liver Cirrhosis Prediction</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="test.html" class="active">Take Test</a>
+                <a href="about.html">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="test-container">
+            <div class="test-header">
+                <h2>Liver Health Assessment</h2>
+                <p class="test-description">Fill in your medical information below to assess your liver health. All fields are required for accurate prediction.</p>
+                <div class="progress-bar">
+                    <div class="progress" id="formProgress"></div>
+                </div>
+            </div>
+
+            <form id="predictionForm" class="medical-form">
+                <div class="form-section" id="personal-info">
+                    <h3>Personal Information</h3>
+                    <div class="form-group">
+                        <label for="age" class="required-field">Age</label>
+                        <div class="input-group">
+                            
+                            <div class="info-tooltip">Please enter your age in years (e.g., 45)</div>
+                            <input type="number" id="age" name="age" required min="0" max="120">
+                            <span class="info-icon" title="Enter your age in years"></span>
+                            
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="required-field">Gender</label>
+                        <div class="input-group">
+                            
+                            <div class="info-tooltip">Select your gender</div>
+                            <select id="gender" name="gender" required>
+                                <option value="">Select Gender</option>
+                                <option value="1">Male</option>
+                                <option value="0">Female</option>
+                            </select>
+                            <span class="info-icon" title="Select your gender"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section" id="blood-tests">
+                    <h3>Blood Test Results</h3>
+                    <div class="form-group">
+                        <label for="albumin" class="required-field">Albumin</label>
+                        <div class="input-group">
+                            
+                            <div class="info-tooltip">Normal range: 3.4-5.4 g/dL</div>
+                            <input type="number" id="albumin" name="albumin" required step="0.1" min="0">
+                            <span class="info-icon" title="Normal range: 3.4-5.4 g/dL"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bilirubin" class="required-field">Bilirubin</label>
+                        <div class="input-group">
+                            
+                            <div class="info-tooltip">Normal range: 0.1-1.2 mg/dL</div>
+                            <input type="number" id="bilirubin" name="bilirubin" required step="0.1" min="0">
+                            <span class="info-icon" title="Normal range: 0.1-1.2 mg/dL"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cholesterol" class="required-field">Cholesterol</label>
+                        <div class="input-group">
+                            
+                            <div class="info-tooltip">Normal range: 125-200 mg/dL</div>
+                            <input type="number" id="cholesterol" name="cholesterol" required min="0">
+                            <span class="info-icon" title="Normal range: 125-200 mg/dL"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="copper" class="required-field">Copper</label>
+                        <div class="input-group">
+                            
+                            <div class="info-tooltip">Normal range: 70-140 μg/dL</div>
+                            <input type="number" id="copper" name="copper" required min="0">
+                            <span class="info-icon" title="Normal range: 70-140 μg/dL"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="alk_phos" class="required-field">Alkaline Phosphatase</label>
+                        <div class="input-group">
+                            
+                            <div class="info-tooltip">Normal range: 44-147 U/L</div>
+                            <input type="number" id="alk_phos" name="alk_phos" required min="0">
+                            <span class="info-icon" title="Normal range: 44-147 U/L"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sgot" class="required-field">SGOT</label>
+                        <div class="input-group">
+                            
+                            <div class="info-tooltip">Normal range: 10-40 U/L</div>
+                            <input type="number" id="sgot" name="sgot" required min="0">
+                            <span class="info-icon" title="Normal range: 10-40 U/L"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="platelets" class="required-field">Platelets</label>
+                        <div class="input-group">
+                            
+                            <div class="info-tooltip">Normal range: 150-450 x 10^9/L</div>
+                            <input type="number" id="platelets" name="platelets" required min="0">
+                            <span class="info-icon" title="Normal range: 150-450 x 10^9/L"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prothrombin" class="required-field">Prothrombin Time</label>
+                        <div class="input-group">
+                            
+                            <div class="info-tooltip">Normal range: 11-13.5 seconds</div>
+                            <input type="number" id="prothrombin" name="prothrombin" required step="0.1" min="0">
+                            <span class="info-icon" title="Normal range: 11-13.5 seconds"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section" id="symptoms">
+                    <h3>Symptoms</h3>
+                    <div class="form-group">
+                        <label class="required-field">Ascites</label>
+                        <div class="input-group">
+                            
+                            <div class="info-tooltip">Fluid accumulation in the abdomen</div>
+                            <select id="ascites" name="ascites" required>
+                                <option value="">Select</option>
+                                <option value="1">Yes</option>
+                                <option value="0">No</option>
+                            </select>
+                            <span class="info-icon" title="Fluid accumulation in the abdomen"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="required-field">Hepatomegaly</label>
+                        <div class="input-group">
+                            
+                            <div class="info-tooltip">Enlarged liver</div>
+                            <select id="hepatomegaly" name="hepatomegaly" required>
+                                <option value="">Select</option>
+                                <option value="1">Yes</option>
+                                <option value="0">No</option>
+                            </select>
+                            <span class="info-icon" title="Enlarged liver"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="required-field">Spiders</label>
+                        <div class="input-group">
+                            
+                            <div class="info-tooltip">Small, spider-like blood vessels on the skin</div>
+                            <select id="spiders" name="spiders" required>
+                                <option value="">Select</option>
+                                <option value="1">Yes</option>
+                                <option value="0">No</option>
+                            </select>
+                            <span class="info-icon" title="Small, spider-like blood vessels on the skin"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="required-field">Edema</label>
+                        <div class="input-group">
+                            
+                            <div class="info-tooltip">Swelling in legs and ankles</div>
+                            <select id="edema" name="edema" required>
+                                <option value="">Select</option>
+                                <option value="1">Yes</option>
+                                <option value="0">No</option>
+                            </select>
+                            <span class="info-icon" title="Swelling in legs and ankles"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="submit-button">
+                        <span class="button-text">Get Prediction</span>
+                        <span class="button-icon">→</span>
+                    </button>
+                </div>
+            </form>
+
+            <div id="result" class="result-container" style="display: none;">
+                <div class="result-header">
+                    <h2>Your Liver Health Assessment</h2>
+                    <div class="risk-level" id="riskLevel">
+                        <h3>Risk Level</h3>
+                        <p id="predictionText"></p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Liver Cirrhosis Prediction Tool. This tool is for educational purposes only. Always consult with healthcare professionals for medical advice.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
